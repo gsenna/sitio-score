@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:title" content="Csound - Tutorial" />
+    <meta property="og:description" content="Un tutorial online sobre Csound" />
+    <title>Csound - Tutorial</title>
+
+    <link rel="stylesheet" href="{{site.baseurl}}/css/codemirror.css">
+	<link rel="stylesheet" href="{{site.baseurl}}/css/theme/monokai.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/style.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/csound-lessons.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/video.css">
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+      const CSD_PATH = "{{ page.csd }}";
+    </script>
+    <script>
+	// Initialize Module before WASM loads
+    Module = {};
+    Module['wasmBinaryFile'] = "{{site.baseurl}}/js/wasm/libcsound.wasm";
+    Module['print'] = console.log;
+    Module['printErr'] = console.log;
+    //Module['onRuntimeInitialized'] = onRuntimeInitialized;
+    </script>
+    <script src="{{site.baseurl}}/js/wasm/csound.js"></script>
+  	<script src="{{site.baseurl}}/js/codemirror.js"></script>
+	<script src="{{site.baseurl}}/js/FileManager.js"></script>
+	<script src="{{site.baseurl}}/js/mode/csound/csound.js"></script>
+	<script src="{{site.baseurl}}/js/addon/edit/matchbrackets.js"></script>
+	<script src="{{site.baseurl}}/js/addon/edit/closebrackets.js"></script>
+	<script src="{{site.baseurl}}/js/keymap/vim.js"></script>
+	<script src="{{site.baseurl}}/js/keymap/emacs.js"></script>
+  </head>
+
+
+  <body>
+    <div id="loadDiv">
+      <code>... C A R G A N D O &nbsp; C S O U N D ...</code>
+    </div>
+	  
+    <div id="o-wrapper" class="o-wrapper">
+      <header class="o-header">
+        <div id="header">
+          <button id="c-button--slide-right" class="c-button">Menu</button>
+          <button id="c-button--toggle-view" class="c-button">Ver</button>
+            <div id="editor-controls">
+                <button class="c-button" id="SaveTextButton">Salvar</button>
+                <button class="c-button" id="RenderButton">Render</button>
+                <button class="c-button" id="ResetButton">Reset</button>
+                <button class="c-button" id="CompileButton">Correr</button>
+
+            </div>
+        </div>
+       </header>
+       <main class="o-content">
+        <div class="o-container" id="container">
+
+     
+         <div id="editor-container">
+       
+            <textarea id="csoundCodeEditor">
+              ;; El código va aquí...
+            </textarea>
+          </div>
+          <div id="dragbar"></div>
+          <div id="lesson">
+            <div class="lessonTxt" id="lessonText">
+            </div>
+          </div>
+        </div>  
+
+      </main>
+
+    </div>
+    
+    <nav id="c-menu--slide-right" class="c-menu c-menu--slide-right">
+      <ul class="cd-accordion-menu animated" id="accordion-menu"></ul> 
+    </nav>
+      
+    <div id="c-mask" class="c-mask"></div><!-- /c-mask -->  
+
+    <!-- post-scripts -->
+    <script src="{{site.baseurl}}/js/cslivecode.js"></script>
+    <script src="{{site.baseurl}}/js/menu.js"></script>
+    <script src="{{site.baseurl}}/js/accordion.js"></script>
+
+    <script>
+         /**
+         * Slide right instantiation and action.
+         */
+        var slideRight = new Menu({
+          wrapper: '#o-wrapper',
+          type: 'slide-right',
+          menuOpenerClass: '.c-button',
+          maskId: '#c-mask'
+        });
+        var slideRightBtn = document.querySelector('#c-button--slide-right');
+  
+        slideRightBtn.addEventListener('click', function(e) {
+          e.preventDefault;
+          slideRight.toggle();
+        });
+    </script>
+    <script src="{{site.baseurl}}/js/loader.js"></script>
+    <script>
+        loadMenu('{{site.baseurl}}');
+        {% assign csdbaseurl = {{page.url}} | split: 'index' %}
+        loadCsd('{{site.baseurl}}' + '/orchestra.csd');
+        loadOnClick('{{site.baseurl}}{{csdbaseurl}}','{{page.text}}','{{page.csd}}', false);
+    </script>
+
+  </body>
+</html>

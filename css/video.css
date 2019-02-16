@@ -1,0 +1,18 @@
+.header{
+ text-align: center;
+}
+
+hr {
+    width: 50%;
+    border-width: 2px;
+}
+
+.sideproject-content {
+  position: relative;
+  width: 100%;
+  /*margin: 362px auto 0;*/
+  top:40px;
+  left: 40px;
+  z-index:0;
+}
+

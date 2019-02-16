@@ -1,0 +1,40 @@
+        <button class="c-menu__instrucciones" onclick="loadOnClick('{{site.baseurl}}','/lessons/intro-a.html','/lessons/empty.csd', true);">&larr; Instrucciones</button>
+        
+        {% assign lessons = site.lessons | sort: "order" %}
+        {% for lesson in lessons %}
+          {% if lesson.folder != nil %}
+            <li class="{{lesson.hasChildren}}">
+		      <input type="checkbox" name ="{{lesson.folder}}" id="{{lesson.folder}}">
+			  <label for="{{lesson.folder}}">{{lesson.title}}</label>
+
+			  <ul>
+
+                {% assign sublessons = lessons | where: "categories", lesson.folder %}
+                {% for sublesson in sublessons %}
+                  {% if sublesson.subfolder != nil %}
+                    <li class="{{sublesson.hasChildren}}">
+		              <input type="checkbox" name ="{{sublesson.subfolder}}" id="{{sublesson.subfolder}}">
+			          <label for="{{sublesson.subfolder}}">{{sublesson.title}}</label>
+                      
+                      <ul>
+                       {% if sublesson.text != nil %}
+                         {% assign sublessonbaseurl = {{sublesson.url}} | split: 'index' %}
+   		                 <li><a href="javascript:void(0);" onclick="loadOnClick('{{site.baseurl}}{{sublessonbaseurl}}','{{sublesson.text}}','{{sublesson.csd}}', true);">{{sublesson.subtitle}}</a></li>
+   		               {% endif %}
+       
+                       {% assign lessonitems = lessons | where: "categories", sublesson.subfolder %}
+                       {% for lessonitem in lessonitems %}
+                         {% assign lessonitemsbaseurl = {{lessonitem.url}} | split: 'index' %}
+   		                 <li><a href="javascript:void(0);" onclick="loadOnClick('{{site.baseurl}}{{lessonitemsbaseurl}}','{{lessonitem.text}}','{{lessonitem.csd}}', true);">{{lessonitem.title}}</a></li>
+   		               {% endfor %}
+   		                 
+                      </ul>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+ 		      </ul>
+  		    </li>
+            
+          {% endif %}
+
+        {% endfor %}
