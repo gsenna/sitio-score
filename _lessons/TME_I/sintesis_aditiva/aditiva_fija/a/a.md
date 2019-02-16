@@ -9,7 +9,7 @@ layout: lessonTxt
 
 ## A. "Aditiva"
 
-Este es el instrumento de Síntesis Aditiva. Los campos-p son:
+Este es el instrumento "Aditiva". Sus campos-p son:
 
 * p4  amp
 * p5  freq
@@ -19,14 +19,5 @@ Este es el instrumento de Síntesis Aditiva. Los campos-p son:
 * p9  reverb
 * p10 fn
 * p11 phase
-
-## B. Tablas
-
-Las tablas que se demuestran son.
-
-* f1
-* f2
-* f5
-* f20
 
 <br>
