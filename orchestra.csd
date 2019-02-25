@@ -5,7 +5,7 @@
 ; ORQUESTA
 ; ================================================================
 
-sr  =   48000
+sr  =   44100
 ksmps   =   10
 nchnls = 2
 0dbfs = 1
@@ -103,7 +103,8 @@ instr FM_Turenas
   indx0   =   p8          ; índice de modulación mínimo
   iafn    =   p9          ; función de envolvente de intensidad
   imfn    =   p10         ; función de envolvente de índice de modulación
-  irev    =   p11         ; envío a la reverberación
+  ipan    =   p11         ; paneo
+  irev    =   p12         ; envío a la reverberación
 
   indx    =   indx1 - indx0 
 
@@ -116,10 +117,12 @@ instr FM_Turenas
   amod   oscili   kdev,         ifm,   -1       ; oscilador modulante
   acar   oscili   kamp,  ifc + amod,   -1       ; oscilador portante
   
-  garevL   += acar * irev
-  garevR   += acar * irev
+  aOutL, aOutR pan2 acar, ipan
 
-         out acar, acar
+           out    aOutL, aOutR
+
+  garevL += aOutL * irev
+  garevR += aOutR * irev
 
 endin
 
@@ -175,7 +178,6 @@ instr Aditiva
                           pSelector_mult_k(p5, 20, sr/2, p7), 
                                       (p10  <  1 ? -1 : p10), 
               (p11  >= 0 && p11 <= 1 ? p11 : random:i(0, 1))
-
 
   aOutL, aOutR pan2 aSig, pSelector_default_k(p8,  0,  1, 0.5)
 

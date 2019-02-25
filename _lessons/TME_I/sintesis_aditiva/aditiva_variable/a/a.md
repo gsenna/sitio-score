@@ -22,7 +22,7 @@ layout: lessonTxt
 |  -p8     | Número de tabla con valores de paneo.             |     -6  |
 |  -p9     | Número de tabla con factores de envío a la reverb.|     -7  |
 |   p10    | Número de la tabla que contiene la forma de onda. |     -1  |
-|   p11    | Fase inicial.                                     |      0  |
+|   p11    | Fase inicial en el rango [0 - 1].                 |      0  |
 
 
 <br>

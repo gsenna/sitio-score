@@ -21,7 +21,7 @@ layout: lessonTxt
 |   p8     | Localización en la imágen estéreo [L:0 - R:1].    |    0.5  |
 |   p9     | Envío a la reverberación expresado como factor.   |    0.8  |
 |   p10    | Número de la tabla que contiene la forma de onda. |     -1  |
-|   p11    | Fase inicial.                                     |      0  |
+|   p11    | Fase inicial en el rango [0 - 1]                  |      0  |
 
 <br>
 

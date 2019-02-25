@@ -16,14 +16,17 @@ layout: lessonTxt
 | :------: | :---------------------------------------------- | ------- |
 |   p4     | Amplitud en dBFS.                               |    -22  |
 |   p5     | Frecuencia portante.                            |   1278  |
-|   p6     | Frecuencia modulante expresada como cociente.   |  0.896  |
+|   p6     | Divisor de la frecuencia portante.              |  0.896  |
 |   p7     | Índice de modulación máximo.                    |    2.5  |
 |   p8     | Índice de modulación mínimo.                    |      0  |
 |   p9     | Función de envolvente de intensidad.            |      2  |
 |   p10    | Función de envolvente de índice de modulación.  |      6  |
-|   p11    | Envío a la reverberación expresado como factor. |    0.5  |
+|   p11    | Localización en la imágen estéreo [L:0 - R:1].  |    0.5  |
+|   p12    | Envío a la reverberación expresado como factor. |    0.8  |
 
 <br>
+
+
 
 ## Tablas
 
