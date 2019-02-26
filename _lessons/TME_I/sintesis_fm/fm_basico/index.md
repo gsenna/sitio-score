@@ -1,8 +1,10 @@
 ---
 layout: lesson 
-title: "FM_Turenas"
+title:  "Síntesis FM"
+subtitle: "FM Básico"
 date:   2018-02-25 17:00:00
-categories: sintesis_fm
+categories: TME_I
+subfolder: sintesis_fm
 csd: a/a.csd
 text: a/a.html
 order: 2

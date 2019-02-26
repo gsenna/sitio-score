@@ -126,6 +126,19 @@ instr FM_Turenas
 
 endin
 
+instr FM_Basico
+
+  aMod poscil p6, p7, -1
+  aCar poscil p4, p5 + aMod, -1
+
+  aOutL, aOutR pan2 aCar, p8
+ 
+             out    aOutL, aOutR
+             
+  garevL += aOutL * p9
+  garevR += aOutR * p9
+
+endin
 
 ; p4 amp
 ; p5 freq
