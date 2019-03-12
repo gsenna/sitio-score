@@ -33,7 +33,7 @@ layout: lessonTxt
 
   * Si la <i>onda moduladora</i> usa frecuencias sub-audibles &rarr; <i>Vibrato</i>.
 
-* La frecuencia central (<b>fc</b>) va a sufrir desvíos hacia arriba y hacia abajo según la amplitud de la onda moduladora (<b>d</b>).
+* La frecuencia portadora o <i>carrier</i> (<b>fc</b>) va a sufrir desvíos hacia arriba y hacia abajo según la amplitud de la onda moduladora (<b>d</b>).
 
    * <b>d</b> representa entonces la desviación máxima.
    

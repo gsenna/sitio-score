@@ -45,7 +45,7 @@ layout: lessonTxt
   
 * El "dibujo" de una tabla depende de funciones llamadas <i>Rutinas GEN</i> (<b>p4</b>). Por ejemplo, la rutina <b>GEN 05</b> nos permite crear segmentos exponenciales, mientras que la rutina <b>GEN 07</b> es capaz de producir segmentos lineales.
 
-  * Si el número de la <i>Rutina GEN</i> es <b>positivo</b>, los valores que resulten de la generación serán normalizados. Dependiendo de la <b>Rutina GEN</b> podemos terminar con valores que van entre 0 y 1 (ondas unipolares), o bien -1 y +1 (ondas bipolares).
+  * Si el número de la <i>Rutina GEN</i> es <b>positivo</b>, los valores que resulten de la generación serán normalizados. Dependiendo de la <b>Rutina GEN</b> y de los argumentos utilizados podemos terminar con rangos entre 0 y 1 (ondas unipolares), o bien -1 y +1 (ondas bipolares).
 
   * Si el número de la <i>Rutina GEN</i> es <b>negativo</b>, los valores serán conservados tal cual aparecen en la <b>instrucción-f</b>.
 
